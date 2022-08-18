@@ -12,13 +12,13 @@ def buildingTwo():
     hasBike = True
 
 def buildingThree():
-    print("You found a pickaxe!/nThis cuts mining time in half.")
+    print("You found a pickaxe!/nThis doubles ore resources when mining.")
     hasPickAxe = True
 
 def buildingFour():
-    print("You found a plow!/nThis cuts harvesting time in half.")
+    print("You found a plow!/nThis doubles plant yield when harvesting.")
     hasPlow = True
 
 def buildingFive():
-    print("You found a shovel!/nThis cuts digging time in half")
+    print("You found a shovel!/nThis doubles clay yield when digging")
     hasShovel = True

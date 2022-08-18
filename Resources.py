@@ -1,4 +1,4 @@
-curOxygen = 60
+curOxygen = 20
 totalOxygen = 60
 
 food = 10
