@@ -1,5 +1,6 @@
 curOxygen = 60
 totalOxygen = 60
+
 food = 10
 water = 5
 ore = 0
