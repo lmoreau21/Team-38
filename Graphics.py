@@ -1,0 +1,2 @@
+def printBase():
+    print(" //\\\\\n(    )")
