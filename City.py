@@ -1,3 +1,5 @@
+import Resources
+
 travelTime = 30
 searchTime = 15
 hasShovel = False
@@ -5,6 +7,10 @@ hasPlow = False
 hasBike = False
 hasPickAxe = False
 
+def getTravelTime():
+    if(hasBike):
+        return travelTime/2
+    return travelTime
 def buildingOne():
     print("You found nothing!")
 def buildingTwo():
@@ -22,3 +28,6 @@ def buildingFour():
 def buildingFive():
     print("You found a shovel!/nThis doubles clay yield when digging")
     hasShovel = True
+
+def returnHome():
+    Resources.curOxygen -= getTravelTime()
