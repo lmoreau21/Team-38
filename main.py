@@ -1,6 +1,7 @@
 # This is a sample Python script.
 import Base
 import Upgrades
+import main
 
 day = 1
 
@@ -13,12 +14,5 @@ day = 1
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print("You have landed on mars")
-    print("Each day you need to eat 1 food and 1 water")
-    Base.atBase()
+   main.start()
 
-def start():
-    Base.atBase()
-
-def end():
-    print("Final Results")
