@@ -120,6 +120,3 @@ def chooseCity():
     elif userInput == 6:
         City.returnHome()
     Resources.printResources()
-
-def endDay():
-    Upgrades.printUpgradeOptions()
