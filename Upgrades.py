@@ -7,20 +7,21 @@ hasFilter = False
 curOxygenLevel = 1
 hasGarden = False
 
+wantUpgrade = True
+
 def upgradeOption():
-    wantUpgrade = input("Would you like to make any upgrades: ")
-    while(wantUpgrade=="yes"):
+    while(wantUpgrade):
         Upgrades.printUpgradeOptions()
         Upgrades.chooseUpgrade()
-        wantUpgrade = input("Would you like to make any upgrades: ")
-
 
 def printUpgradeOptions():
     oxygenTankCost()
     baseUpgradeCost()
     waterFilterCost()
+    print("5. No Upgrade")
 
 def chooseUpgrade():
+    Upgrades.wantUpgrade = True
     userInput = int(input("Which upgrade: "))
     while userInput < 1 and userInput > 5:
         print("Please renenter the number")
@@ -33,6 +34,8 @@ def chooseUpgrade():
         Upgrades.upgradeFood()
     elif userInput == 4:
         Upgrades.upgradeFilterGarden()
+    else:
+        Upgrades.wantUpgrade = False
     Resources.printResources()
 
 def oxygenTankCost():
@@ -58,10 +61,9 @@ def waterFilterCost():
 
 
 def upgradeOxygen():
-    if(Resources.ore>=2*Upgrades.curOxygenLevel and Resources.plants>=2*Upgrades.curOxygenLevel):
-        Resources.maxOxygen+=30
+    if(Resources.ore >= 2*Upgrades.curOxygenLevel and Resources.plants >= 2*Upgrades.curOxygenLevel):
+        Resources.totalOxygen += 30
         Upgrades.curOxygenLevel+=1
-        Lore.upgradeOxygen2()
     else:
         print("Not enough resources")
 def upgradeBase():

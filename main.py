@@ -2,6 +2,7 @@
 import Base
 import Upgrades
 import main
+import Lore
 
 day = 1
 
@@ -14,5 +15,5 @@ day = 1
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-   main.start()
+   Lore.start()
 

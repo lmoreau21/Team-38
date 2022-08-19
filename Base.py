@@ -1,6 +1,7 @@
 # This is a sample Python script.
 import City
 import Graphics
+import Lore
 import Mountains
 import Plains
 import Resources
@@ -8,54 +9,73 @@ import Upgrades
 import main
 import Base
 
+isDay = True
 
+def startDay():
+    while(main.day<=30):
+        Base.atBase()
+    if(Upgrades.curBaseLevel==3 and Upgrades.hasFilter and Upgrades.hasGarden):
+        Lore.goodEnd()
+    else:
+        Lore.deathDays()
+    exit()
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 def atBase():
-    print("It is day "+str(main.day))
-    wantSleep = input("Would you like to end the day: ")
-    while (wantSleep == "no"):
+    print("\nIt is day "+str(main.day))
+    Base.isDay = True
+    while(isDay):
         chooseLocation()
-        wantSleep = input("Would you like to end the day: ")
+
+def endDay():
     main.day += 1
     Resources.curOxygen = Resources.totalOxygen
-    Resources.food -= 1
+    if(Upgrades.hasGarden==False):
+        Resources.food -= 1
     if Resources.food < 0:
-        print("food death")
-    Resources.water -= 1
+        Lore.deathNutrients()
+        exit()
+    if (Upgrades.hasFilter == False):
+        Resources.water -= 1
     if Resources.water < 0:
-        print("dehydration death")
+        Lore.deathNutrients()
+        exit()
+
 
 
 def noOxygen():
     if Resources.curOxygen < 0:
-        print("you dead")
+        Lore.deathOxygen()
         exit()
 def chooseLocation():
     Resources.printResources()
     print("1. Plains ("+ str(Plains.getTravelTime()) +" minutes)")
     print("2. Mountain ("+ str(Mountains.getTravelTime()) +" minutes)")
     print("3. City (" + str(City.getTravelTime()) + " minutes)")
-    print("4. Upgrade and End Day")
+    print("4. Upgrade")
+    print("5. End Day")
     userInput = int(input("Which location: "))
-    while userInput < 1 and userInput > 3:
+    while userInput < 1 and userInput > 5:
         print("Please renenter the number")
         userInput = int(input("Which location: "))
     if userInput == 1:
+        Lore.plains()
         Base.choosePlain()
     elif userInput == 2:
         Base.chooseMountain()
     elif userInput == 3:
+        Lore.cityEntrance()
         Base.chooseCity()
     elif userInput == 4:
         Upgrades.upgradeOption()
+    else:
+        Base.isDay = False
+        endDay()
 
 def choosePlain():
     Plains.returnHome()
     Base.noOxygen()
-    stayHere = input("Would you like to return to base: ")
-    while (stayHere == "no"):
+    while (True):
         Base.noOxygen()
-        Resources.printOxygen()
         print("Each Activity takes "+str(Plains.resourceTime)+" minutes")
         print("1. Harvest Plants")
         print("2. Collect Water")
@@ -78,15 +98,14 @@ def choosePlain():
             Plains.returnHome()
             noOxygen()
             Base.chooseLocation()
+            break
 
         Resources.printResources()
 def chooseMountain():
     Mountains.returnHome()
     Base.noOxygen()
-    stayHere = input("Would you like to return to base: ")
-    while (stayHere == "no"):
+    while (True):
         Base.noOxygen()
-        Resources.printOxygen()
         print("Each Activity takes " + str(Mountains.resourceTime) + " minutes")
         print("1. Harvest Plants")
         print("2. Collect Water")
@@ -109,14 +128,14 @@ def chooseMountain():
             Mountains.returnHome()
             Base.noOxygen()
             Base.chooseLocation()
+            break
         Resources.printResources()
 def chooseCity():
     City.returnHome()
     Base.noOxygen()
-    stayHere = input("Would you like to return to base: ")
-    while (stayHere == "no"):
+
+    while (True):
         Base.noOxygen()
-        Resources.printOxygen()
         print("Each Building takes " + str(City.searchTime) + " minutes to search")
         print("1. Building One")
         print("2. Building Two")
@@ -142,3 +161,4 @@ def chooseCity():
             City.returnHome()
             Base.noOxygen()
             Base.chooseLocation()
+            break
