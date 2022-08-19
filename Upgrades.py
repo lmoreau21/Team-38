@@ -1,3 +1,4 @@
+import Lore
 import Resources
 import Upgrades
 
@@ -60,6 +61,7 @@ def upgradeOxygen():
     if(Resources.ore>=2*Upgrades.curOxygenLevel and Resources.plants>=2*Upgrades.curOxygenLevel):
         Resources.maxOxygen+=30
         Upgrades.curOxygenLevel+=1
+        Lore.upgradeOxygen2()
     else:
         print("Not enough resources")
 def upgradeBase():
@@ -67,16 +69,19 @@ def upgradeBase():
         Upgrades.curBaseLevel+=1
         Resources.plants -=2
         Resources.bricks -=2
+        Lore.upgradeBase()
     elif(Upgrades.curBaseLevel ==2 and Resources.plants >=3 and Resources.bricks >=3 and Resources.ore >=1):
         Upgrades.curBaseLevel +=2
         Resources.plants -=3
         Resources.bricks -=3
         Resources.ore -=1
+        Lore.upgradeBase()
     elif(Upgrades.curBaseLevel ==3 and Resources.plants >=5 and Resources.bricks >=5 and Resources.ore >=2):
         Upgrades.curBaseLevel +=3
         Resources.plants -=5
         Resources.bricks -=5
         Resources.ore -=2
+        Lore.upgradeBase()
     else:
         print("Not enough resources")
 def upgradeFood():
@@ -90,6 +95,7 @@ def upgradeFilterGarden():
         Resources.ore -=3
         Resources.plants -=1
         Upgrades.hasFilter = True
+        Lore.upgradeWater()
     elif(hasFilter and Resources.bricks >=3 and Resources.plants >= 5):
         Resources.bricks -=3
         Resources.plants -=5
