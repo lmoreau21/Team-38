@@ -19,8 +19,17 @@ def atBase():
     main.day += 1
     Resources.curOxygen = Resources.totalOxygen
     Resources.food -= 1
+    if Resources.food < 0:
+        print("food death")
     Resources.water -= 1
+    if Resources.water < 0:
+        print("dehydration death")
 
+
+def noOxygen():
+    if Resources.curOxygen < 0:
+        print("you dead")
+        exit()
 def chooseLocation():
     Resources.printResources()
     print("1. Plains ("+ str(Plains.getTravelTime()) +" minutes)")
@@ -42,8 +51,10 @@ def chooseLocation():
 
 def choosePlain():
     Plains.returnHome()
+    Base.noOxygen()
     stayHere = input("Would you like to return to base: ")
     while (stayHere == "no"):
+        Base.noOxygen()
         Resources.printOxygen()
         print("Each Activity takes "+str(Plains.resourceTime)+" minutes")
         print("1. Harvest Plants")
@@ -65,12 +76,16 @@ def choosePlain():
             Plains.mineOre()
         elif userInput == 5:
             Plains.returnHome()
+            noOxygen()
             Base.chooseLocation()
+
         Resources.printResources()
 def chooseMountain():
     Mountains.returnHome()
+    Base.noOxygen()
     stayHere = input("Would you like to return to base: ")
     while (stayHere == "no"):
+        Base.noOxygen()
         Resources.printOxygen()
         print("Each Activity takes " + str(Mountains.resourceTime) + " minutes")
         print("1. Harvest Plants")
@@ -92,12 +107,15 @@ def chooseMountain():
             Mountains.mineOre()
         elif userInput == 5:
             Mountains.returnHome()
+            Base.noOxygen()
             Base.chooseLocation()
         Resources.printResources()
 def chooseCity():
     City.returnHome()
+    Base.noOxygen()
     stayHere = input("Would you like to return to base: ")
     while (stayHere == "no"):
+        Base.noOxygen()
         Resources.printOxygen()
         print("Each Building takes " + str(City.searchTime) + " minutes to search")
         print("1. Building One")
@@ -122,4 +140,5 @@ def chooseCity():
             City.buildingFive()
         elif userInput == 6:
             City.returnHome()
-        Resources.printResources()
+            Base.noOxygen()
+            Base.chooseLocation()
