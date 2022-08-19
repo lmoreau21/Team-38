@@ -7,8 +7,8 @@ def start():
 
 def objective():
     print("Since the landing was a little rough, you go to access the damages.")
-    print("You find that your oxygen tank is intact but you probably need an upgrade soon.")
-    print("You already have a small supply of food and water, but having a water filtration system at the base would be great.")
+    print("You find that your oxygen tank is intact but you probably need an upgrade soon since it lasts only 60 minutes a day.")
+    print("You only have 5 days of food and water, but having a water filtration system at the base would be great.")
 def gardenObjective():
     print("Gather plants and put them in the garden.")
 
