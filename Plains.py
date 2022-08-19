@@ -1,3 +1,4 @@
+import Base
 import City
 import Resources
 import Upgrades
@@ -19,9 +20,13 @@ def returnHome():
     Resources.curOxygen -= getTravelTime()
 def harvestPlants():
     Resources.plants+=plant
+    Resources.curOxygen -= resourceTime
 def collectWater():
     Resources.water+=waters
+    Resources.curOxygen -= resourceTime
 def digClay():
     Resources.bricks+=clay
+    Resources.curOxygen -= resourceTime
 def mineOre():
     Resources.ore+=ores
+    Resources.curOxygen -= resourceTime
