@@ -61,7 +61,7 @@ def upgradeOxygen():
     if(Resources.ore>=2*Upgrades.curOxygenLevel and Resources.plants>=2*Upgrades.curOxygenLevel):
         Resources.maxOxygen+=30
         Upgrades.curOxygenLevel+=1
-        Lore.upgradeOxygen2()
+        Lore.upgradeOxygen()
     else:
         print("Not enough resources")
 def upgradeBase():
