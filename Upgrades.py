@@ -32,6 +32,7 @@ def chooseUpgrade():
         Upgrades.upgradeFood()
     elif userInput == 4:
         Upgrades.upgradeFilterGarden()
+    Resources.printResources()
 
 def oxygenTankCost():
     print("1. Upgrade oxygen tank (extends max time by 30 min): ",end="")
