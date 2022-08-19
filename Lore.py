@@ -31,7 +31,7 @@ def plains():
     print("The plains has a large sparkling river running through it with plants growing along side it.")
     print("Some of the plants look delicious.")
     print("You notice that the areas of the river with more plants are cleaner than the other areas lacking plants.")
-    print("These plants must be filtering the water.")
+    print("These plants seem to be filtering the water.")
 def mountains():
     print("As you walk up to the mountains, you feel tiny compared to the tall structures.")
     print("There are ores all along the sides and a few plants.")
