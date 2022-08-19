@@ -56,7 +56,7 @@ def waterFilterCost():
 
 
 def upgradeOxygen():
-    if(Resources.curOre>=2*Upgrades.curOxygenLevel and Resources.curPlants>=2*Upgrades.curOxygenLevel):
+    if(Resources.ore>=2*Upgrades.curOxygenLevel and Resources.plants>=2*Upgrades.curOxygenLevel):
         Resources.maxOxygen+=30
         Upgrades.curOxygenLevel+=1
     else:
