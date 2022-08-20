@@ -6,7 +6,7 @@ import main
 def start():
     Graphics.land()
     print("You landed on a mysterious golden planet and decide to name it Planet PFT 1269.")
-    print("The base seems to be falling apart and it doesn't seem like it'll a third of a month.")
+    print("The base seems to be falling apart and it doesn't seem it is going to last that long.")
     print("This will be your home for an indefinite amount of time. Try your best to make it habitable in 10 days.")
 
     Base.startDay()
