@@ -1,5 +1,6 @@
 import Base
 import Graphics
+import main
 
 
 def start():
@@ -16,8 +17,6 @@ def objective():
     print("You only have 3 days of food and water, but having a water filtration system at the base would be great.")
 def gardenObjective():
     print("Congrats! You made a garden. You do not have to think about food anymore")
-
-
 
 #Upgrades
 def upgradeWater():
@@ -43,10 +42,6 @@ def mountains():
     print("As you walk up to the mountains, you feel tiny compared to the tall structures.")
     print("There are ores all along the sides and a few plants.")
 
-
-
-
-
 #endings
 def goodEnd():
     print("Congratulations! You have successfully fulfilled all the objectives needed to live on Planet PFT 1269!")
@@ -57,8 +52,10 @@ def deathDays():
 
 def deathNutrients():
     print("Oh no, you forgot to eat! You died from malnutrition. Drink water and eat your vegetables.")
+    print("You survived "+main.day+" days!")
     print("Game Over")
 
 def deathOxygen():
     print("You didn't have enough oxygen. You suffocated to death.")
+    print("You survived "+main.day+" days!")
     print("Game Over")
