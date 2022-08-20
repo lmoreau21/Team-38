@@ -9,6 +9,7 @@ travelTime = 30
 searchTime = 15
 hasBike = False
 
+#checks if the player has bike and changes travel time if they do
 def getTravelTime():
     if(hasBike):
         return travelTime/2
