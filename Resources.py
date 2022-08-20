@@ -17,4 +17,4 @@ def printOxygen():
 
 def printResources():
     printOxygen()
-    print("Water: "+str(water)+"\tFood: "+str(food)+"\t\tPlants: "+str(plants)+"\tOre: "+str(ore)+"\tBricks: "+str(bricks))
+    print("Water: "+str(water)+"    Food: "+str(food)+"    Plants: "+str(plants)+"    Ore: "+str(ore)+"    Bricks: "+str(bricks))
