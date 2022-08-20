@@ -128,15 +128,17 @@ def printBuildings():
 
 #creates a Explosion graphic
 def printExplosion():
-            print(r"""          _ ._  _ , _ ._
-        (_ ' ( `  )_  .__)
-      ( (  (    )   `)  ) _)
-     (__ (_   (_ . _) _) ,__)
-         `~~`\ ' . /`~~`
-              ;   ;
-              /   \
-  ___________/_ __ \___________""")
-
+            print(r"""    _.-^^---....,,--       
+ _--                  --_  
+<                        >)
+|                         | 
+ \._                   _./  
+    ```--. . , ; .--'''       
+          | |   |             
+       .-=||  | |=-.   
+       `-=#$%&%$#=-'   
+          | ;  :|     
+ _____.,-#%&$@%#&#~,._____""")
 #creates a CharacterDead graphic
 def printCharacterDead():
                 print(r"""
