@@ -77,7 +77,7 @@ def chooseLocation():
     print("4. Upgrade")
     print("5. End Day")
     userInput = int(input("Which location: "))
-    while userInput < 1 and userInput > 5:
+    while (userInput < 1 and userInput > 5):
         print("Please renenter the number")
         userInput = int(input("Which location: "))
     if userInput == 1:
