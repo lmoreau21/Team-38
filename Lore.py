@@ -5,15 +5,15 @@ import Graphics
 def start():
     Graphics.land()
     print("You landed on a mysterious golden planet and decide to name it Planet PFT 1269.")
-    print("The base seems to be falling apart and it doesn't seem like it'll last more than half a month.")
-    print("This will be your home for an indefinite amount of time. Try your best to make it habitable in 15 days.")
+    print("The base seems to be falling apart and it doesn't seem like it'll a third of a month.")
+    print("This will be your home for an indefinite amount of time. Try your best to make it habitable in 10 days.")
 
     Base.startDay()
 
 def objective():
     print("Since the landing was a little rough, you go to access the damages.")
-    print("You find that your oxygen tank is intact but you probably need an upgrade soon since it lasts only 60 minutes a day.")
-    print("You only have 5 days of food and water, but having a water filtration system at the base would be great.")
+    print("You find that your oxygen tank is intact but you probably need an upgrade soon since it lasts only 30 minutes a day.")
+    print("You only have 3 days of food and water, but having a water filtration system at the base would be great.")
 def gardenObjective():
     print("Congrats! You made a garden. You do not have to think about food anymore")
 

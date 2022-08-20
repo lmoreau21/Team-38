@@ -1,10 +1,10 @@
 import Graphics
 
-curOxygen = 60
-totalOxygen = 60
+curOxygen = 30
+totalOxygen = 30
 
-food = 5
-water = 5
+food = 3
+water = 3
 ore = 0
 plants = 0
 bricks = 0
