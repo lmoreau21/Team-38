@@ -59,7 +59,7 @@ def deathNutrients():
     exit()
 
 def deathOxygen():
-    print("\nYou didn't have enough oxygen. You suffocated to death.")
+    print("You didn't have enough oxygen. You suffocated to death.")
     print("You survived "+str(main.day)+" days!")
     print("Game Over")
     exit()
