@@ -1,4 +1,4 @@
-import Graphics
+#creates a axe graphic
 def printAxe():
     print(r""" _,-,
 T_  |
@@ -7,6 +7,7 @@ T_  |
 ||
 ~~""")
 
+#creates a pickaxe graphic
 def printPickAxe():
     print(r""" ,--,_,--,
 <|  _T_  |>
@@ -15,6 +16,7 @@ def printPickAxe():
     | |
     ~~~""")
 
+#creates a Plow graphic
 def printPlow():
     print(r"""                                        
   ~~:..                                  :~JPB#G. 
@@ -29,6 +31,8 @@ def printPlow():
              :&@@@@@@@@@@@#5!.                    
                ~B@@@@&BJ^.                        
                  ..:.                """)
+
+# creates a Shovel graphic
 def printShovel():
     print(r"""
                     ██████            
@@ -44,6 +48,8 @@ def printShovel():
     ▓▓▒▒██                                
       ▓▓██                                
                     """)
+
+#creates a Land graphic
 def land():
     print(r"""                           *     .--.
                                 / /  `
@@ -65,24 +71,28 @@ def land():
            _.-'``                    ``'-._
          -'                                '-""")
 
+#creates a Bike graphic
 def printBike():
     print(r"""  ,
 .-/c-.,:: 
 (_)'==(_)    
     """)
 
+#creates a Base1 graphic
 def printBase1():
     print(r"""      ___I_
      /\-_--\
     /  \_-__\
     |[]| [] |""")
 
+#creates a Base2 graphic
 def printBase2():
         print(r"""       []___
       /    /\____
 (~)  /_/\_//____/\
  |   | || |||__|||""")
 
+#creates a Base3 graphic
 def printBase3():
             print(r"""     ____||____
     ///////////\
@@ -90,6 +100,8 @@ def printBase3():
    |    _    |  |
    |[] | | []|[]|  
    |   | |   |  |""")
+
+# creates a Mountains graphic
 def printMountains():
             print(r"""             o\
    _________/__\__________
@@ -101,6 +113,8 @@ def printMountains():
   |     /-.,\      /     \|
   |    /     \    ,-.     \
   |___/_______\__/___\_____\ """)
+
+# creates a Plains graphic
 def printPlains():
     print(r"""             ░░      ░░  ░░    ▒▒░░            ░░      
                 ░░    ░░░░▒▒░░        ▒▒        
@@ -113,12 +127,15 @@ def printPlains():
           ░░▒▒▓▓▓▓▒▒▒▒▒▒▒▒▓▓▓▓▒▒▓▓░░▓▓░░  ▒▒      
           ▓▓░░▓▓████▓▓██▓▓░░▒▒▓▓██▓▓▒▒▓▓▒▒▓▓    
           ▓▓▓▓████████████▓▓▓▓██▓▓████████▓▓    """)
+
+#creates a Buildings graphic
 def printBuildings():
             print(r"""            |   _   _
       . | . x .|.|-|.|
    |\ ./.\-/.\-|.|.|.|
    |.|_|.|_|.|.|.|_|.|""")
 
+#creates a Explosion graphic
 def printExplosion():
             print(r"""          _ ._  _ , _ ._
         (_ ' ( `  )_  .__)
@@ -129,6 +146,7 @@ def printExplosion():
               /   \
   ___________/_ __ \___________""")
 
+#creates a CharacterDead graphic
 def printCharacterDead():
                 print(r"""
  .--.
@@ -136,7 +154,6 @@ def printCharacterDead():
  |HH| You are dead.
  `--'
                        ~~""")
-
 
 def printBar(cur, max):
     print("Oxygen: "+str(cur)+" minutes")
