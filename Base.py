@@ -16,7 +16,7 @@ firstPlain = True
 
 def startDay():
     Lore.objective()
-    while(main.day<=30):
+    while(main.day<=15):
         Base.atBase()
     if(Upgrades.curBaseLevel==3 and Upgrades.hasFilter and Upgrades.hasGarden):
         Lore.goodEnd()
@@ -79,11 +79,13 @@ def chooseLocation():
         if(firstMountain):
             Lore.mountains()
             Base.firstMountain = False
+        Graphics.printMountains()
         Base.chooseMountain()
     elif userInput == 3:
         if(firstCity):
             Lore.city()
             Base.firstCity = False
+        Graphics.printBuildings()
         Base.chooseCity()
     elif userInput == 4:
         Upgrades.upgradeOption()
