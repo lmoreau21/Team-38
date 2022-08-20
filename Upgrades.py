@@ -6,9 +6,9 @@ curBaseLevel = 1
 hasFilter = False
 curOxygenLevel = 1
 hasGarden = False
-
 wantUpgrade = True
 
+#check to see if player wants upgrades
 def upgradeOption():
     while(wantUpgrade):
         Upgrades.printUpgradeOptions()
@@ -22,6 +22,7 @@ def printUpgradeOptions():
     waterFilterCost()
     print("5. No Upgrade")
 
+#Upgrade Options
 def chooseUpgrade():
     userInput = int(input("Which upgrade: "))
     while userInput < 1 and userInput > 5:
@@ -40,10 +41,12 @@ def chooseUpgrade():
     if userInput != 5:
         Resources.printResources()
 
+#prints Oxygen Cost
 def oxygenTankCost():
     print("1. Upgrade oxygen tank (extends max time by 30 min): ",end="")
     print(str(2*curOxygenLevel) + " Ore and " + str(2*curOxygenLevel)+ " Plants)")
 
+#prints baseUpgrade Options
 def baseUpgradeCost():
     print("2. Upgrade base costs:",end=" ")
     if(curBaseLevel==1):
@@ -53,6 +56,7 @@ def baseUpgradeCost():
     elif(curBaseLevel==3):
         print("5 Plants, 5 Bricks, 2 Ore")
 
+#prints waterFilter Cost
 def waterFilterCost():
     if (hasGarden == False):
         print("3. Food costs: 1 Plant")
@@ -61,7 +65,7 @@ def waterFilterCost():
     if (hasGarden == False and hasFilter):
         print("4. Garden costs: Water Filter, 3 Bricks, 5 Plants")
 
-
+#prints upgradeOxygen Requirements
 def upgradeOxygen():
     if(Resources.ore >= 2*Upgrades.curOxygenLevel and Resources.plants >= 2*Upgrades.curOxygenLevel):
         Lore.upgradeOxygen()
@@ -71,6 +75,8 @@ def upgradeOxygen():
         Upgrades.curOxygenLevel += 1
     else:
         print("Not enough resources")
+
+#prints upgradeBase Requirements
 def upgradeBase():
     if(Upgrades.curBaseLevel==1 and Resources.plants >=2 and Resources.bricks >=2):
         Upgrades.curBaseLevel+=1
@@ -91,6 +97,8 @@ def upgradeBase():
         Lore.upgradeBase()
     else:
         print("Not enough resources")
+
+#prints upgradeFood Requirements
 def upgradeFood():
     if(Resources.plants >= 1):
         Resources.food+=1
@@ -98,6 +106,8 @@ def upgradeFood():
         print("You have one more food!")
     else:
         print("Not enough resources")
+
+#prints upgradeFilterGarden
 def upgradeFilterGarden():
     if (curBaseLevel == 2 and Resources.ore >=3 and Resources.plants >=1 ):
         Resources.ore -=3
