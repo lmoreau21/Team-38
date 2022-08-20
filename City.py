@@ -37,12 +37,14 @@ def buildingFour():
     print("You found a plow!\nThis doubles plant yield when harvesting.")
     City.hasPlow = True
     Resources.curOxygen -= searchTime
+    Graphics.printPlow()
     Plains.plant *= 2
     Mountains.plant *= 2
 
 def buildingFive():
     print("You found a shovel!\nThis doubles clay yield when digging")
     City.hasShovel = True
+    Graphics.printShovel()
     Resources.curOxygen -= searchTime
     Plains.clay *= 2
     Mountains.clay *= 2

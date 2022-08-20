@@ -74,6 +74,7 @@ def chooseLocation():
         if(firstPlain):
             Lore.plains()
             Base.firstPlain = False
+        Graphics.printPlains()
         Base.choosePlain()
     elif userInput == 2:
         if(firstMountain):
