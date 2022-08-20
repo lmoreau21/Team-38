@@ -6,8 +6,8 @@ import main
 def start():
     Graphics.land()
     print("You landed on a mysterious golden planet and decide to name it Planet PFT 1269.")
-    print("The base seems to be falling apart and it doesn't seem it is going to last that long.")
-    print("This will be your home for an indefinite amount of time. Try your best to make it habitable in 10 days.")
+    print("The base seems to be falling apart. This will be your home for an indefinite amount of time.")
+    print("Try your best to make it habitable in 10 days.")
 
     Base.startDay()
 
@@ -45,17 +45,20 @@ def mountains():
 #endings
 def goodEnd():
     print("Congratulations! You have successfully fulfilled all the objectives needed to live on Planet PFT 1269!")
-
+    exit()
 def deathDays():
     print("Your base has collapsed! You lost everything. Now you're doomed to die.")
     print("Game Over")
+    exit()
 
 def deathNutrients():
     print("Oh no, you forgot to eat! You died from malnutrition. Drink water and eat your vegetables.")
-    print("You survived "+main.day+" days!")
+    print("You survived "+str(main.day)+" days!")
     print("Game Over")
+    exit()
 
 def deathOxygen():
     print("You didn't have enough oxygen. You suffocated to death.")
-    print("You survived "+main.day+" days!")
+    print("You survived "+str(main.day)+" days!")
     print("Game Over")
+    exit()

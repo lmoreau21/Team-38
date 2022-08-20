@@ -156,7 +156,7 @@ def printCharacterDead():
                        ~~""")
 
 def printBar(cur, max):
-    print("Oxygen: "+str(cur)+" minutes")
+    print("\nOxygen: "+str(cur)+" minutes")
     for x in range (60):
         if(x <= cur/max*60):
             print("█",end="")
