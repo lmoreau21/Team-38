@@ -10,21 +10,27 @@ import main
 import Base
 
 isDay = True
+firstMountain = True
+firstCity = True
+firstPlain = True
 
 def startDay():
+    Lore.objective()
     while(main.day<=30):
         Base.atBase()
     if(Upgrades.curBaseLevel==3 and Upgrades.hasFilter and Upgrades.hasGarden):
         Lore.goodEnd()
     else:
+        Graphics.printExplosion()
         Lore.deathDays()
     exit()
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 def atBase():
     print("\nIt is day "+str(main.day))
+    Base.basePic()
     Base.isDay = True
-    while(isDay):
-        chooseLocation()
+    while(Base.isDay):
+        Base.chooseLocation()
 
 def endDay():
     main.day += 1
@@ -40,8 +46,6 @@ def endDay():
         Lore.deathNutrients()
         exit()
 
-
-
 def noOxygen():
     if Resources.curOxygen < 0:
         Lore.deathOxygen()
@@ -49,14 +53,13 @@ def noOxygen():
 
 def basePic():
     if (Upgrades.curBaseLevel == 1):
-        print(Graphics.printBase1())
+        Graphics.printBase1()
     elif (Upgrades.curBaseLevel == 2):
-        print(Graphics.printBase2())
+        Graphics.printBase2()
     else:
-        print(Graphics.printBase3())
+        Graphics.printBase3()
 
 def chooseLocation():
-    print(basePic())
     Resources.printResources()
     print("1. Plains ("+ str(Plains.getTravelTime()) +" minutes)")
     print("2. Mountain ("+ str(Mountains.getTravelTime()) +" minutes)")
@@ -68,12 +71,19 @@ def chooseLocation():
         print("Please renenter the number")
         userInput = int(input("Which location: "))
     if userInput == 1:
-        Lore.plains()
+        if(firstPlain):
+            Lore.plains()
+            Base.firstPlain = False
         Base.choosePlain()
     elif userInput == 2:
+        if(firstMountain):
+            Lore.mountains()
+            Base.firstMountain = False
         Base.chooseMountain()
     elif userInput == 3:
-        Lore.cityEntrance()
+        if(firstCity):
+            Lore.city()
+            Base.firstCity = False
         Base.chooseCity()
     elif userInput == 4:
         Upgrades.upgradeOption()
@@ -92,7 +102,7 @@ def choosePlain():
         print("2. Collect Water")
         print("3. Dig for Clay")
         print("4. Mine for Ore")
-        print("5. Return Home")
+        print("5. Return Home ("+str(Plains.getTravelTime())+" minutes)")
         userInput = int(input("Which Action: "))
         while userInput < 1 and userInput > 5:
             print("Please renenter the number")
@@ -117,12 +127,12 @@ def chooseMountain():
     Base.noOxygen()
     while (True):
         Base.noOxygen()
-        print("Each Activity takes " + str(Mountains.resourceTime) + " minutes")
+        print("\nEach Activity takes " + str(Mountains.resourceTime) + " minutes")
         print("1. Harvest Plants")
         print("2. Collect Water")
         print("3. Dig for Clay")
         print("4. Mine for Ore")
-        print("5. Return Home")
+        print("5. Return Home ("+str(Mountains.getTravelTime())+" minutes)")
         userInput = int(input("Which Action: "))
         while userInput < 1 and userInput > 6:
             print("Please renenter the number")
@@ -146,14 +156,15 @@ def chooseCity():
     Base.noOxygen()
 
     while (True):
+        Graphics.printBar(Resources.curOxygen, Resources.totalOxygen)
         Base.noOxygen()
-        print("Each Building takes " + str(City.searchTime) + " minutes to search")
+        print("\nEach Building takes " + str(City.searchTime) + " minutes to search")
         print("1. Building One")
         print("2. Building Two")
         print("3. Building Three")
         print("4. Building Four")
         print("5. Building Five")
-        print("6. Return Home")
+        print("6. Return Home ("+str(City.getTravelTime())+" minutes)")
         userInput = int(input("Which Action: "))
         while userInput < 1 and userInput > 6:
             print("Please renenter the number")

@@ -13,7 +13,7 @@ def objective():
     print("You find that your oxygen tank is intact but you probably need an upgrade soon since it lasts only 60 minutes a day.")
     print("You only have 5 days of food and water, but having a water filtration system at the base would be great.")
 def gardenObjective():
-    print("Gather plants and put them in the garden.")
+    print("Congrats! You made a garden. You do not have to think about food anymore")
 
 
 
@@ -25,6 +25,8 @@ def upgradeWater():
 def upgradeOxygen():
     print("You upgraded your O2 tank! Your supply has gone up by 30 minutes!")
 
+def upgradeBase():
+    print("You upgrade your base! Now you can upgrade more things.")
 #Entering each location
 def city():
     print("You arrived to the entrance of the city. It's abandoned and small.")

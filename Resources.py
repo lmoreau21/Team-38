@@ -3,7 +3,7 @@ import Graphics
 curOxygen = 60
 totalOxygen = 60
 
-food = 10
+food = 5
 water = 5
 ore = 0
 plants = 0
@@ -15,4 +15,4 @@ def printOxygen():
     print()
 def printResources():
     printOxygen()
-    print("Water: "+str(water)+"\tFood: "+str(food)+"\tPlants: "+str(plants)+"\tOre: "+str(ore)+"\tBricks: "+str(bricks))
+    print("Water: "+str(water)+"\tFood: "+str(food)+"\t\tPlants: "+str(plants)+"\tOre: "+str(ore)+"\tBricks: "+str(bricks))

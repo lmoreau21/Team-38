@@ -3,7 +3,7 @@ import City
 import Resources
 import Upgrades
 
-travelTime = 6
+travelTime = 5
 ores = 1
 waters = 2
 plant = 4
