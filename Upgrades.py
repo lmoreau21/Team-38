@@ -22,7 +22,7 @@ def printUpgradeOptions():
     waterFilterCost()
     print("5. No Upgrade")
 
-#Upgrade Options
+#Upgrade Options (Allows user to upgrade)
 def chooseUpgrade():
     userInput = int(input("Which upgrade: "))
     while userInput < 1 and userInput > 5:
