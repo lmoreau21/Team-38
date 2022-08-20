@@ -172,6 +172,7 @@ $$$$\"\"\"$$$$$$$$$$uuu   uu$$$$$$$$$"\"\"$$$"
    "$$$$$\"                      \"\"$$$$\"\"
      $$$"                         $$$$" """)
 
+#creates oxygen bar
 def printBar(cur, max):
     print("\nOxygen: "+str(cur)+" minutes")
     for x in range (60):
