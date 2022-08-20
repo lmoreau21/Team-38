@@ -10,7 +10,6 @@ plants = 0
 bricks = 0
 
 def printOxygen():
-    print("\nOxygen: " + str(curOxygen) + " minutes")
     Graphics.printBar(curOxygen, totalOxygen)
     print()
 def printResources():
