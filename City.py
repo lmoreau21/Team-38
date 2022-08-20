@@ -30,7 +30,7 @@ def buildingTwo():
 #Building Three gives pickaxe to double ore
 def buildingThree():
     print("You found a pickaxe!\nThis doubles ore resources when mining.")
-    Graphics.printAxe()
+    Graphics.printPickAxe()
     Resources.curOxygen -= searchTime
     Plains.ores *= 2
     Mountains.ores *= 2

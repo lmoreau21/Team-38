@@ -1,12 +1,3 @@
-#creates a axe graphic
-def printAxe():
-    print(r""" _,-,
-T_  |
-||`-'
-||
-||
-~~""")
-
 #creates a pickaxe graphic
 def printPickAxe():
     print(r""" ,--,_,--,
