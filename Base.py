@@ -81,18 +81,21 @@ def chooseLocation():
         print("Please renenter the number")
         userInput = int(input("Which location: "))
     if userInput == 1:
+        print("Welcome to the plains")
         if(firstPlain):
             Lore.plains()
             Base.firstPlain = False
         Graphics.printPlains()
         Base.choosePlain()
     elif userInput == 2:
+        print("Welcome to the mountains")
         if(firstMountain):
             Lore.mountains()
             Base.firstMountain = False
         Graphics.printMountains()
         Base.chooseMountain()
     elif userInput == 3:
+        print("Welcome to the city")
         if(firstCity):
             Lore.city()
             Base.firstCity = False

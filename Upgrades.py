@@ -16,7 +16,7 @@ def upgradeOption():
     Upgrades.wantUpgrade = True
 
 def printUpgradeOptions():
-    print()
+    print("\nUpgrade Options: ")
     oxygenTankCost()
     baseUpgradeCost()
     waterFilterCost()
