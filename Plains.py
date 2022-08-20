@@ -6,8 +6,8 @@ import Upgrades
 travelTime = 5
 ores = 1
 waters = 2
-plant = 4
-clay = 4
+plant = 2
+clay = 1
 
 resourceTime = 10
 

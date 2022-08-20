@@ -23,7 +23,6 @@ def printUpgradeOptions():
     print("5. No Upgrade")
 
 def chooseUpgrade():
-    Upgrades.wantUpgrade = True
     userInput = int(input("Which upgrade: "))
     while userInput < 1 and userInput > 5:
         print("Please renenter the number")
@@ -36,10 +35,10 @@ def chooseUpgrade():
         Upgrades.upgradeFood()
     elif userInput == 4:
         Upgrades.upgradeFilterGarden()
-    else:
+    elif userInput == 5:
         Upgrades.wantUpgrade = False
-        exit(chooseUpgrade())
-    Resources.printResources()
+    if userInput != 5:
+        Resources.printResources()
 
 def oxygenTankCost():
     print("1. Upgrade oxygen tank (extends max time by 30 min): ",end="")
