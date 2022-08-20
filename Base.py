@@ -26,7 +26,7 @@ def startDay():
     exit()
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
 def atBase():
-    print("\nIt is day "+str(main.day))
+    print("\nIt is day "+str(main.day)+". You have eaten one food and water!")
     Base.basePic()
     Base.isDay = True
     while(Base.isDay):
