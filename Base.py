@@ -26,7 +26,7 @@ def startDay():
         Lore.deathDays()
     exit()
 
-# gives information on the day and food/water consumtion also runs funtion to choose location
+# gives information on the day and food/water consumption also runs function to choose location
 def atBase():
     print("\nIt is day "+str(main.day)+". You have eaten one food and water!")
     Base.basePic()

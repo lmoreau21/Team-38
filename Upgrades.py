@@ -85,13 +85,13 @@ def upgradeBase():
         Resources.bricks -=2
         Lore.upgradeBase()
     elif(Upgrades.curBaseLevel ==2 and Resources.plants >=3 and Resources.bricks >=3 and Resources.ore >=1):
-        Upgrades.curBaseLevel +=2
+        Upgrades.curBaseLevel += 1
         Resources.plants -=3
         Resources.bricks -=3
         Resources.ore -=1
         Lore.upgradeBase()
     elif(Upgrades.curBaseLevel ==3 and Resources.plants >=5 and Resources.bricks >=5 and Resources.ore >=2):
-        Upgrades.curBaseLevel +=3
+        Upgrades.curBaseLevel += 1
         Resources.plants -=5
         Resources.bricks -=5
         Resources.ore -=2
