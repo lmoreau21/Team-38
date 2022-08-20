@@ -14,9 +14,10 @@ firstMountain = True
 firstCity = True
 firstPlain = True
 
+#Checks day count and win conditions each day
 def startDay():
     Lore.objective()
-    while(main.day<=15):
+    while(main.day<=10):
         Base.atBase()
     if(Upgrades.curBaseLevel==3 and Upgrades.hasFilter and Upgrades.hasGarden):
         Lore.goodEnd()
@@ -24,14 +25,18 @@ def startDay():
         Graphics.printExplosion()
         Lore.deathDays()
     exit()
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+# gives information on the day and food/water consumtion also runs funtion to choose location
 def atBase():
-    print("\nIt is day "+str(main.day))
+    print("\nIt is day "+str(main.day)+". You have eaten one food and water!")
     Base.basePic()
     Base.isDay = True
     while(Base.isDay):
         Base.chooseLocation()
 
+"""Takes away 1 food and 1 water at the end of day, adds a day to day count, and checks
+   condition for a malnutrition death
+"""
 def endDay():
     main.day += 1
     Resources.curOxygen = Resources.totalOxygen
@@ -46,11 +51,13 @@ def endDay():
         Lore.deathNutrients()
         exit()
 
+#checks oxygen level whenever called to determine if the player dies
 def noOxygen():
     if Resources.curOxygen < 0:
         Lore.deathOxygen()
         exit()
 
+#changes base picture based on level of base
 def basePic():
     if (Upgrades.curBaseLevel == 1):
         Graphics.printBase1()
@@ -59,6 +66,9 @@ def basePic():
     else:
         Graphics.printBase3()
 
+"""Gives the player options of what to do at their base and takes the players
+input to determine where their go/ what they do 
+"""
 def chooseLocation():
     Resources.printResources()
     print("1. Plains ("+ str(Plains.getTravelTime()) +" minutes)")
@@ -94,6 +104,7 @@ def chooseLocation():
         Base.isDay = False
         endDay()
 
+#gives the player options of resopurces to collect if they select to go to the plains
 def choosePlain():
     Plains.returnHome()
     Base.noOxygen()
@@ -124,7 +135,7 @@ def choosePlain():
             Base.chooseLocation()
             break
 
-        ##Resources.printResources()
+#gives the player options of resopurces to collect if they select to go to the Mountians
 def chooseMountain():
     Mountains.returnHome()
     Base.noOxygen()
@@ -154,6 +165,10 @@ def chooseMountain():
             Base.chooseLocation()
             break
         Resources.printResources()
+
+"""gives the player the option of what building to search for while in the city
+and grants the item that is in that building
+"""
 def chooseCity():
     City.returnHome()
     Base.noOxygen()

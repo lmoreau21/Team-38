@@ -48,7 +48,8 @@ def oxygenTankCost():
 
 #prints baseUpgrade Options
 def baseUpgradeCost():
-    print("2. Upgrade base costs:",end=" ")
+    if(curBaseLevel<=3):
+        print("2. Upgrade base costs:",end=" ")
     if(curBaseLevel==1):
         print("2 Plants and 2 Bricks")
     elif(curBaseLevel==2):

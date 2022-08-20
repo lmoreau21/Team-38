@@ -1,23 +1,22 @@
 import Base
 import Graphics
+import main
 
 
 def start():
     Graphics.land()
     print("You landed on a mysterious golden planet and decide to name it Planet PFT 1269.")
-    print("The base seems to be falling apart and it doesn't seem like it'll last more than half a month.")
-    print("This will be your home for an indefinite amount of time. Try your best to make it habitable in 15 days.")
+    print("The base seems to be falling apart and it doesn't seem it is going to last that long.")
+    print("This will be your home for an indefinite amount of time. Try your best to make it habitable in 10 days.")
 
     Base.startDay()
 
 def objective():
     print("Since the landing was a little rough, you go to access the damages.")
-    print("You find that your oxygen tank is intact but you probably need an upgrade soon since it lasts only 60 minutes a day.")
-    print("You only have 5 days of food and water, but having a water filtration system at the base would be great.")
+    print("You find that your oxygen tank is intact but you probably need an upgrade soon since it lasts only 30 minutes a day.")
+    print("You only have 3 days of food and water, but having a water filtration system at the base would be great.")
 def gardenObjective():
     print("Congrats! You made a garden. You do not have to think about food anymore")
-
-
 
 #Upgrades
 def upgradeWater():
@@ -43,10 +42,6 @@ def mountains():
     print("As you walk up to the mountains, you feel tiny compared to the tall structures.")
     print("There are ores all along the sides and a few plants.")
 
-
-
-
-
 #endings
 def goodEnd():
     print("Congratulations! You have successfully fulfilled all the objectives needed to live on Planet PFT 1269!")
@@ -57,8 +52,10 @@ def deathDays():
 
 def deathNutrients():
     print("Oh no, you forgot to eat! You died from malnutrition. Drink water and eat your vegetables.")
+    print("You survived "+main.day+" days!")
     print("Game Over")
 
 def deathOxygen():
     print("You didn't have enough oxygen. You suffocated to death.")
+    print("You survived "+main.day+" days!")
     print("Game Over")
