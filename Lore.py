@@ -52,14 +52,15 @@ def deathDays():
     exit()
 
 def deathNutrients():
-    print(Graphics.printCharacterDead())
-    print("Oh no, you forgot to eat! You died from malnutrition. Drink water and eat your vegetables.")
+    Graphics.printCharacterDead()
+    print("\nOh no, you forgot to eat! You died from malnutrition. Drink water and eat your vegetables.")
     print("You survived "+str(main.day)+" days!")
     print("Game Over")
     exit()
 
 def deathOxygen():
-    print("You didn't have enough oxygen. You suffocated to death.")
+    Graphics.printCharacterDead()
+    print("\nYou didn't have enough oxygen. You suffocated to death.")
     print("You survived "+str(main.day)+" days!")
     print("Game Over")
     exit()
