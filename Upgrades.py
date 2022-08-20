@@ -51,11 +51,11 @@ def baseUpgradeCost():
     if(curBaseLevel<=3):
         print("2. Upgrade base costs:",end=" ")
     if(curBaseLevel==1):
-        print("2 Plants and 2 Bricks")
+        print("2 Plants and 2 Bricks (level 2)")
     elif(curBaseLevel==2):
-        print("3 Plants, 3 Bricks, 1 Ore")
+        print("3 Plants, 3 Bricks, 1 Ore (level 3)")
     elif(curBaseLevel==3):
-        print("5 Plants, 5 Bricks, 2 Ore")
+        print("5 Plants, 5 Bricks, 2 Ore (final level)")
 
 #prints waterFilter Cost
 def waterFilterCost():
