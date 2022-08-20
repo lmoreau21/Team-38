@@ -44,6 +44,7 @@ def mountains():
 
 #endings
 def goodEnd():
+    Graphics.winGraphic()
     print("Congratulations! You have successfully fulfilled all the objectives needed to live on Planet PFT 1269!")
     exit()
 def deathDays():
