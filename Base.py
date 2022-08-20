@@ -46,7 +46,17 @@ def noOxygen():
     if Resources.curOxygen < 0:
         Lore.deathOxygen()
         exit()
+
+def basePic():
+    if (Upgrades.curBaseLevel == 1):
+        print(Graphics.printBase1())
+    elif (Upgrades.curBaseLevel == 2):
+        print(Graphics.printBase2())
+    else:
+        print(Graphics.printBase3())
+
 def chooseLocation():
+    print(basePic())
     Resources.printResources()
     print("1. Plains ("+ str(Plains.getTravelTime()) +" minutes)")
     print("2. Mountain ("+ str(Mountains.getTravelTime()) +" minutes)")
@@ -76,7 +86,8 @@ def choosePlain():
     Base.noOxygen()
     while (True):
         Base.noOxygen()
-        print("Each Activity takes "+str(Plains.resourceTime)+" minutes")
+        Resources.printResources()
+        print("\nEach Activity takes "+str(Plains.resourceTime)+" minutes")
         print("1. Harvest Plants")
         print("2. Collect Water")
         print("3. Dig for Clay")
@@ -100,7 +111,7 @@ def choosePlain():
             Base.chooseLocation()
             break
 
-        Resources.printResources()
+        ##Resources.printResources()
 def chooseMountain():
     Mountains.returnHome()
     Base.noOxygen()

@@ -31,7 +31,7 @@ def city():
     print("While looking around, you think about the type of people (or things) that once lived here.")
     print("Most of the city is in rubbles. It seems like you can only explore 5 buildings but you only have time for one right now.")
 def plains():
-    print("The plains has a large sparkling river running through it with plants growing along side it.")
+    print("\nThe plains has a large sparkling river running through it with plants growing along side it.")
     print("Some of the plants look delicious.")
     print("You notice that the areas of the river with more plants are cleaner than the other areas lacking plants.")
     print("These plants seem to be filtering the water.")
