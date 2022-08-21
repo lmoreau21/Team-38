@@ -102,7 +102,7 @@ def upgradeFood():
 
 #prints upgradeFilterGarden
 def upgradeFilterGarden():
-    if (curBaseLevel == 2 and Resources.ore >=3 and Resources.plants >=1 ):
+    if (curBaseLevel >= 2 and Resources.ore >=3 and Resources.plants >=1 ):
         Resources.ore -=3
         Resources.plants -=1
         Upgrades.hasFilter = True
