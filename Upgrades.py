@@ -48,11 +48,11 @@ def oxygenTankCost():
 
 #prints baseUpgrade Options
 def baseUpgradeCost():
-    if(curBaseLevel<=2):
+    if(curBaseLevel <= 2):
         print("2. Upgrade base costs:",end=" ")
-    if(curBaseLevel==1):
+    if(curBaseLevel == 1):
         print("2 Plants and 2 Bricks (level 2)")
-    elif(curBaseLevel==2):
+    elif(curBaseLevel == 2):
         print("3 Plants, 3 Bricks, 1 Ore (level 3)")
 
 #prints waterFilter Cost
@@ -61,7 +61,7 @@ def waterFilterCost():
         print("3. Food costs: 1 Plant")
     if(hasFilter==False):
         print("4. Filter costs: Level 2 Base, 3 Ore, and 1 Plant")
-    if (hasGarden == False and hasFilter):
+    elif (hasGarden == False and hasFilter):
         print("4. Garden costs: Water Filter, 3 Bricks, 5 Plants")
 
 #prints upgradeOxygen Requirements
@@ -78,15 +78,15 @@ def upgradeOxygen():
 #prints upgradeBase Requirements
 def upgradeBase():
     if(Upgrades.curBaseLevel==1 and Resources.plants >=2 and Resources.bricks >=2):
-        Upgrades.curBaseLevel+=1
-        Resources.plants -=2
-        Resources.bricks -=2
+        Upgrades.curBaseLevel += 1
+        Resources.plants -= 2
+        Resources.bricks -= 2
         Lore.upgradeBase()
     elif(Upgrades.curBaseLevel ==2 and Resources.plants >=3 and Resources.bricks >=3 and Resources.ore >=1):
         Upgrades.curBaseLevel += 1
-        Resources.plants -=3
-        Resources.bricks -=3
-        Resources.ore -=1
+        Resources.plants -= 3
+        Resources.bricks -= 3
+        Resources.ore -= 1
         Lore.upgradeBase()
     else:
         print("Not enough resources")
@@ -94,26 +94,26 @@ def upgradeBase():
 #prints upgradeFood Requirements
 def upgradeFood():
     if(Resources.plants >= 1):
-        Resources.food+=1
-        Resources.plants-=1
+        Resources.food += 1
+        Resources.plants -= 1
         print("You have one more food!")
     else:
         print("Not enough resources")
 
 #prints upgradeFilterGarden
 def upgradeFilterGarden():
-    if (curBaseLevel >= 2 and Resources.ore >=3 and Resources.plants >=1 ):
-        Resources.ore -=3
-        Resources.plants -=1
-        Upgrades.hasFilter = True
-        Lore.upgradeWater()
-        Resources.water = 10
-    elif(hasFilter and Resources.bricks >=3 and Resources.plants >= 5):
-        Resources.bricks -=3
-        Resources.plants -=5
+    if (hasFilter and Resources.bricks >=3 and Resources.plants >= 5):
+        Resources.bricks -= 3
+        Resources.plants -= 5
         Upgrades.hasGarden = True
         Lore.gardenObjective()
-        Resources.food = 10
+        Resources.food = 100
+    elif(curBaseLevel >= 2 and Resources.ore >=3 and Resources.plants >=1 ):
+        Resources.ore -= 3
+        Resources.plants -= 1
+        Upgrades.hasFilter = True
+        Lore.upgradeWater()
+        Resources.water = 100
     else:
         print("Not enough resources or base level requirement")
 
