@@ -77,7 +77,7 @@ def chooseLocation():
     print("4. Upgrade")
     print("5. End Day")
     userInput = int(input("Which location: "))
-    while (userInput < 1 and userInput > 5):
+    while (userInput < 1 and userInput > 5 and userInput == 101):
         print("Please renenter the number")
         userInput = int(input("Which location: "))
     if userInput == 1:
@@ -106,6 +106,13 @@ def chooseLocation():
     elif userInput == 5:
         Base.isDay = False
         endDay()
+    elif userInput == 101:
+        Resources.curOxygen = 360
+        Resources.ore = 100
+        Resources.water = 100
+        Resources.food = 100
+        Resources.plants = 100
+        Resources.bricks = 100
 
 #gives the player options of resopurces to collect if they select to go to the plains
 def choosePlain():
