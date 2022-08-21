@@ -107,7 +107,7 @@ def chooseLocation():
         Base.isDay = False
         endDay()
     elif userInput == 101:
-        Resources.curOxygen = 360
+        Resources.totalOxygen = 360
         Resources.ore = 100
         Resources.water = 100
         Resources.food = 100
