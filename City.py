@@ -4,6 +4,7 @@ import Plains
 import Resources
 import Base
 import City
+import random
 
 travelTime = 30
 searchTime = 15
@@ -53,3 +54,7 @@ def buildingFive():
 
 def returnHome():
     Resources.curOxygen -= getTravelTime()
+
+
+buildings = [buildingOne, buildingTwo, buildingThree, buildingFour, buildingFive]
+random.shuffle(buildings)

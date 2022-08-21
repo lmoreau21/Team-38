@@ -107,11 +107,13 @@ def upgradeFilterGarden():
         Resources.plants -=1
         Upgrades.hasFilter = True
         Lore.upgradeWater()
+        Resources.water = 10
     elif(hasFilter and Resources.bricks >=3 and Resources.plants >= 5):
         Resources.bricks -=3
         Resources.plants -=5
         Upgrades.hasGarden = True
         Lore.gardenObjective()
+        Resources.food = 10
     else:
         print("Not enough resources or base level requirement")
 

@@ -103,7 +103,7 @@ def chooseLocation():
         Base.chooseCity()
     elif userInput == 4:
         Upgrades.upgradeOption()
-    else:
+    elif userInput == 5:
         Base.isDay = False
         endDay()
 
@@ -190,16 +190,8 @@ def chooseCity():
         while userInput < 1 and userInput > 6:
             print("Please renenter the number")
             userInput = int(input("Which Action: "))
-        if userInput == 1:
-            City.buildingOne()
-        elif userInput == 2:
-            City.buildingTwo()
-        elif userInput == 3:
-            City.buildingThree()
-        elif userInput == 4:
-            City.buildingFour()
-        elif userInput == 5:
-            City.buildingFive()
+        if userInput <= 5:
+            City.buildings[userInput-1]()
         elif userInput == 6:
             City.returnHome()
             Base.noOxygen()
