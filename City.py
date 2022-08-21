@@ -38,9 +38,9 @@ def buildingThree():
 
 #Building Four has plow to double plants
 def buildingFour():
-    print("You found a plow!\nThis doubles plant yield when harvesting.")
+    print("You found a Scythe!\nThis doubles plant yield when harvesting.")
     Resources.curOxygen -= searchTime
-    Graphics.printPlow()
+    Graphics.printScythe()
     Plains.plant *= 2
     Mountains.plant *= 2
 
